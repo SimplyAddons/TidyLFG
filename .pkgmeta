@@ -1,0 +1,5 @@
+package-as: TidyLFG
+
+ignore:
+  - README.md
+  - LICENSE
