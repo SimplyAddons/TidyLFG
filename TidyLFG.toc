@@ -1,0 +1,11 @@
+﻿## Interface: 100000
+## Title: TidyLFG
+## Notes: Filter unwanted advertisements from LFG.
+## Author: SimplyAddons
+## Version: @project-version@
+## SavedVariables: TidyLFGSettingsGlobal
+## SavedVariablesPerCharacter: TidyLFGSettings
+## X-Category: Miscellaneous
+## X-Curse-Project-ID: 398170
+
+TidyLFG.lua
