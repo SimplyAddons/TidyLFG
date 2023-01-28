@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <Script file="1-Init.lua"/>
+    <Script file="2-Database.lua"/>
+    <Script file="3-Realms.lua"/>
+	<Script file="4-Commands.lua"/>
+    <Script file="5-Load.lua"/>
+    <Script file="6-Core.lua"/>
+</Ui>

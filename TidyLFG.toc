@@ -1,11 +1,12 @@
-﻿## Interface: 100000
+﻿## Interface: 100005
 ## Title: TidyLFG
-## Notes: Filter unwanted advertisements from LFG.
+## Notes: Filter advertisements and realms from LFG.
 ## Author: SimplyAddons
 ## Version: @project-version@
-## SavedVariables: TidyLFGSettingsGlobal
-## SavedVariablesPerCharacter: TidyLFGSettings
+## SavedVariables: TidyLFGDB
 ## X-Category: Miscellaneous
 ## X-Curse-Project-ID: 398170
 
-TidyLFG.lua
+Libs\Embeds.xml
+Core\Core.xml
+Config\Config.xml
