@@ -16,8 +16,3 @@ TidyLFG only applies to M+ dungeon listings found under the Premade Group > Dung
 You can toggle logs on or off to see what groups are being filtered. Logs will appear in your chat window.
 
 ![TidyLFG](https://user-images.githubusercontent.com/9218035/198521561-c00f71b6-2ea0-4050-bb19-4bc00f6cddc7.jpg)
-
-## To-Do
-
-* Add configurable option to filter NA servers (for those in Oceanic realms who similarily, don't wish to be phased to NA realms).
-* Add configurable option to enable or disable realm filters.
