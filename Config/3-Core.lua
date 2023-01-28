@@ -16,18 +16,19 @@ E.optionsPanel:SetScript("OnShow", function(self)
 
     -- render options
     local relative = title
-    --for optKey,optDesc in pairs(options) do
     for id=1, #options do
-        E.optionsPanel[id] = CreateFrame("CheckButton", nil, E.optionsPanel, "UICheckButtonTemplate");
-        E.optionsPanel[id]:SetPoint("TOPLEFT", relative, "LEFT", 0, -16);
-        E.optionsPanel[id].text:SetText(options[id]["desc"]);
-        E.optionsPanel[id]:SetChecked(E:GetConfig(options[id]["key"]));
-        E.optionsPanel[id]:SetScript("OnClick", function(event)
+        E.optionsPanel[options[id]["key"]] = CreateFrame("CheckButton", nil, E.optionsPanel, "UICheckButtonTemplate");
+        E.optionsPanel[options[id]["key"]]:SetPoint("TOPLEFT", relative, "LEFT", 0, -16);
+        E.optionsPanel[options[id]["key"]].text:SetText(options[id]["desc"]);
+        E.optionsPanel[options[id]["key"]]:SetChecked(E:GetConfig(options[id]["key"]));
+        E.optionsPanel[options[id]["key"]]:SetScript("OnClick", function(event)
             E:SaveConfig(options[id]["key"], event:GetChecked())
         end)
-        relative = E.optionsPanel[id]
+        relative = E.optionsPanel[options[id]["key"]]
     end
 
+    -- unregister so we dont repeatedly
+    -- render the addon options
 	self:SetScript("OnShow", nil)
 end)
 

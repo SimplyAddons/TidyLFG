@@ -14,7 +14,7 @@ function E:CreateTidyButton()
 	end
 	E.logButton:SetNormalFontObject("GameFontNormalSmall");
 	E.logButton:SetHighlightFontObject("GameFontHighlightSmall");
-	E.logButton:SetScript("OnClick", E.ToggleLogs);
+	E.logButton:SetScript("OnClick", E.ToggleLogButton);
 
 	if IsAddOnLoaded("ElvUI") then
 		S:HandleButton(E.logButton)

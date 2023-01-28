@@ -1,4 +1,4 @@
-﻿local E = select(2, ...):unpack()
+local E = select(2, ...):unpack()
 
 -- Overwrite C_LFGList.GetPlaystyleString with a custom implementation because the original function is
 -- hardware protected, causing an error when a group tooltip is shown as we modify the search result list.
@@ -34,17 +34,28 @@ local function TableFind(table, tableId)
     end
 end
 
-function E:ToggleLogs()
+function E:UpdateLogButton(state)
+	if (state == true) then
+		E.logButton:SetText("Hide Tidy Logs");
+	else
+		E.logButton:SetText("Show Tidy Logs");
+	end
+end
+
+function E:ToggleLogButton()
 	if (E:GetConfig("showLogs") == true) then
 		E:SaveConfig("showLogs", false);
+		E.optionsPanel["showLogs"]:SetChecked(false);
 		E.logButton:SetText("Show Tidy Logs");
 	else
 		E:SaveConfig("showLogs", true);
+		E.optionsPanel["showLogs"]:SetChecked(true);
 		E.logButton:SetText("Hide Tidy Logs");
 	end
 end
 
 function E:TidyEvent(self, event, ...)
+	E:UpdateLogButton(E:GetConfig("showLogs"))
     if ( event == "LFG_LIST_SEARCH_RESULT_UPDATED" ) then
 		if( LFGListFrame.SearchPanel:IsShown() ) then
 			LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
