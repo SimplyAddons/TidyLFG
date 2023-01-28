@@ -1,10 +1,9 @@
 package-as: TidyLFG
 
 ignore:
+  - .gitignore
   - README.md
   - LICENSE
-
-wowi-create-changelog: no
 
 manual-changelog:
   filename: CHANGELOG.md
