@@ -44,13 +44,13 @@ end
 
 function E:ToggleLogButton()
 	if (E:GetConfig("showLogs") == true) then
-		E:SaveConfig("showLogs", false);
-		E.optionsPanel["showLogs"]:SetChecked(false);
 		E.logButton:SetText("Show Tidy Logs");
+		E.optionsPanel["showLogs"]:SetChecked(false);
+		E:SaveConfig("showLogs", false);
 	else
-		E:SaveConfig("showLogs", true);
-		E.optionsPanel["showLogs"]:SetChecked(true);
 		E.logButton:SetText("Hide Tidy Logs");
+		E.optionsPanel["showLogs"]:SetChecked(true);
+		E:SaveConfig("showLogs", true);
 	end
 end
 
