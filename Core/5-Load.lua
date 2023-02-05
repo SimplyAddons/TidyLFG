@@ -53,6 +53,8 @@ function E:OnInitialize()
 		}
 	}
     self.DB = LibStub("AceDB-3.0"):New("TidyLFGDB", defaults, true)
+
+	E:TaintFixes()
 end
 
 function E:OnEnable()

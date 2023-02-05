@@ -1,29 +1,34 @@
 local E = select(2, ...):unpack()
 
--- Overwrite C_LFGList.GetPlaystyleString with a custom implementation because the original function is
--- hardware protected, causing an error when a group tooltip is shown as we modify the search result list.
--- Original code from https://github.com/ChrisKader/LFMPlus/blob/36bca68720c724bf26cdf739614d99589edb8f77/core.lua#L38
--- but sligthly modified.
-C_LFGList.GetPlaystyleString = function(playstyle, activityInfo)
-	if not (
-		activityInfo and
-		playstyle and
-		playstyle ~= 0 and
-		C_LFGList.GetLfgCategoryInfo(activityInfo.categoryID).showPlaystyleDropdown
-	) then
-		return nil
+function E:TaintFixes()
+	-- Overwrite C_LFGList.GetPlaystyleString with a custom implementation because the original function is
+	-- hardware protected, causing an error when a group tooltip is shown as we modify the search result list.
+	-- Original code from https://github.com/ChrisKader/LFMPlus/blob/36bca68720c724bf26cdf739614d99589edb8f77/core.lua#L38
+	-- but sligthly modified.
+	C_LFGList.GetPlaystyleString = function(playstyle, activityInfo)
+		if not (
+			activityInfo and
+			playstyle and
+			playstyle ~= 0 and
+			C_LFGList.GetLfgCategoryInfo(activityInfo.categoryID).showPlaystyleDropdown
+		) then
+			return nil
+		end
+		local globalStringPrefix
+		if activityInfo.isMythicPlusActivity then
+			globalStringPrefix = "GROUP_FINDER_PVE_PLAYSTYLE"
+		elseif activityInfo.isRatedPvpActivity then
+			globalStringPrefix = "GROUP_FINDER_PVP_PLAYSTYLE"
+		elseif activityInfo.isCurrentRaidActivity then
+			globalStringPrefix = "GROUP_FINDER_PVE_RAID_PLAYSTYLE"
+		elseif activityInfo.isMythicActivity then
+			globalStringPrefix = "GROUP_FINDER_PVE_MYTHICZERO_PLAYSTYLE"
+		end
+		return globalStringPrefix and _G[globalStringPrefix .. tostring(playstyle)] or nil
 	end
-	local globalStringPrefix
-	if activityInfo.isMythicPlusActivity then
-		globalStringPrefix = "GROUP_FINDER_PVE_PLAYSTYLE"
-	elseif activityInfo.isRatedPvpActivity then
-		globalStringPrefix = "GROUP_FINDER_PVP_PLAYSTYLE"
-	elseif activityInfo.isCurrentRaidActivity then
-		globalStringPrefix = "GROUP_FINDER_PVE_RAID_PLAYSTYLE"
-	elseif activityInfo.isMythicActivity then
-		globalStringPrefix = "GROUP_FINDER_PVE_MYTHICZERO_PLAYSTYLE"
-	end
-	return globalStringPrefix and _G[globalStringPrefix .. tostring(playstyle)] or nil
+
+	-- Disable automatic group titles to prevent tainting errors
+	LFGListEntryCreation_SetTitleFromActivityInfo = function(_) end
 end
 
 local function TableFind(table, tableId)
@@ -68,9 +73,6 @@ end
 function E:TidyUpdate()
 
 	if( not LFGListFrame.SearchPanel:IsShown() ) then return; end
-
-	-- Disable automatic group titles to prevent tainting errors
-    LFGListEntryCreation_SetTitleFromActivityInfo = function(_) end
 
 	local showLogs = E:GetConfig("showLogs")
 
