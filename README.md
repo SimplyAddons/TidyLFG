@@ -1,18 +1,23 @@
 # TidyLFG
 
-TidyLFG enhances the default LFG experience for Mythic+ activities in World of Warcraft.
+TidyLFG is a simple addon which enhances the default LFG experience for Mythic+ activities, by filtering unwanted advertisements from the LFG tool.
 
 ## Addon Features
 
 TidyLFG only applies to M+ dungeon listings found under the Premade Group > Dungeons menu in the Group Finder.
 
 * **Filter advertisements**
-    * Advertisers often exhibit predictable behaviour, which stands out from typical users who are genuinely trying to play the game. We can use these identifiers to help filter out spam from the listings. Unfortunately, Blizzard decided to protect some areas of their game API, making it impossible for us to analyze group names or comments directly, so this will not catch everything.
+    * Advertisers often exhibit predictable behaviour, which stands out from typical users who are genuinely trying to play the game. We can use these identifiers to help filter out spam from the listings. Unfortunately, Blizzard decided to protect certain areas of their game API which limits our ability to effectively address the problem. This filter works great, it just won't be able to catch everything.
 * **Filter Realms**
-    * If a player on a North American realm, joins a party with a group leader on an Oceanic realm, the NA player will be phased to the Oceanic realm. Unfortunately, this results in high latency and ping. This can often lead to a poor game experience for you, and your group members.
+    * Players can choose to filter one, or more regional realms. As example, this filter can help players avoid high latency and ping as a result of being phased to particular regional realms. This can happen when, as example, a player on a North American realm joins a party with a group leader from an Oceanic realm. The NA player will be phased to the Oceanic realm, causing poor network performance, and ultimately a poor game experience for you and your party members.
     
 ## Options
 
-You can toggle logs on or off to see what groups are being filtered. Logs will appear in your chat window.
+Type /tl or /tidy to open the Options. You may also access it via the in-game Options menu.
 
-![TidyLFG](https://user-images.githubusercontent.com/9218035/198521561-c00f71b6-2ea0-4050-bb19-4bc00f6cddc7.jpg)
+Here you can choose to filter realms and show logs in your chat window.
+
+There is also a log button attached to the top of your Group Finder window, for quick access.
+
+![TidyLFG](https://user-images.githubusercontent.com/116991888/216848944-9650c1df-d929-4b71-bad2-8741709b78e4.jpg)
+![TidyLFG](https://user-images.githubusercontent.com/116991888/215262286-f3444f5e-8ab7-42dc-abe5-9ab3569bbcae.jpg)
