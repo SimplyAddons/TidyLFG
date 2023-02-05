@@ -55,11 +55,10 @@ function E:ToggleLogButton()
 end
 
 function E:TidyEvent(self, event, ...)
+	if( not LFGListFrame.SearchPanel:IsShown() ) then return; end
 	E:UpdateLogButton(E:GetConfig("showLogs"))
     if ( event == "LFG_LIST_SEARCH_RESULT_UPDATED" ) then
-		if( LFGListFrame.SearchPanel:IsShown() ) then
-			LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
-		end
+		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
     end
 end
 
@@ -74,7 +73,7 @@ function E:TidyUpdate()
     LFGListEntryCreation_SetTitleFromActivityInfo = function(_) end
 
 	local showLogs = E:GetConfig("showLogs")
-	
+
 	local resultInfo = C_LFGList.GetSearchResultInfo(self.resultID);
 	local leaderName = resultInfo.leaderName; -- name of party leader
 
