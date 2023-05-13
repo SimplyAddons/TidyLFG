@@ -1,5 +1,5 @@
-﻿## Interface: 100005
-## Title: TidyLFG
+﻿## Interface: 100100
+## Title: |cFF1784d1TidyLFG|r
 ## Notes: Filter advertisements and realms from LFG.
 ## Author: SimplyAddons
 ## Version: @project-version@
