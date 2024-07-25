@@ -40,31 +40,25 @@ local function TableFind(table, tableId)
 end
 
 function E:UpdateLogButton(state)
-	if (state == true) then
-		E.logButton:SetText("Hide Tidy Logs");
+	if state then
+		E.logButton:SetText("Hide Tidy Logs")
 	else
-		E.logButton:SetText("Show Tidy Logs");
+		E.logButton:SetText("Show Tidy Logs")
 	end
 end
 
 function E:ToggleLogButton()
-	if (E:GetConfig("showLogs") == true) then
-		E.logButton:SetText("Show Tidy Logs");
-		E.optionsPanel["showLogs"]:SetChecked(false);
-		E:SaveConfig("showLogs", false);
-	else
-		E.logButton:SetText("Hide Tidy Logs");
-		E.optionsPanel["showLogs"]:SetChecked(true);
-		E:SaveConfig("showLogs", true);
-	end
+	local showLogs = E:GetConfig("showLogs")
+	E:SaveConfig("showLogs", not showLogs)
+	E:UpdateLogButton(not showLogs)
 end
 
 function E:TidyEvent(self, event, ...)
-	if( not LFGListFrame.SearchPanel:IsShown() ) then return; end
+	if not LFGListFrame.SearchPanel:IsShown() then return end
 	E:UpdateLogButton(E:GetConfig("showLogs"))
-    if ( event == "LFG_LIST_SEARCH_RESULT_UPDATED" ) then
+	if event == "LFG_LIST_SEARCH_RESULT_UPDATED" then
 		LFGListSearchPanel_UpdateResults(LFGListFrame.SearchPanel)
-    end
+	end
 end
 
 -- unfortunately Blizzard decided to make the name, comment, and voice details protected
