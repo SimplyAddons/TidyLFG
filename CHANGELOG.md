@@ -1,3 +1,8 @@
+# 2.1.2
+- LoadAddOn has been deprecated by C_AddOns.LoadAddOn
+- GetAddOnMetadata has been deprecated by C_AddOns.GetAddOnMetadata
+- Fix broken slash commands for opening addon settings
+
 # 2.1.1
 - bump TOC for TWW (11.0.2)
 
