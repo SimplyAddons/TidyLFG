@@ -1,3 +1,6 @@
+# 2.1.1
+- bump TOC for TWW (11.0.2)
+
 # 2.1.0
 - bump TOC for TWW (11.0.0)
 - add icon texture
