@@ -14,7 +14,7 @@ function NS:unpack()
 end
 
 NS[1].AddOn = AddOnName
-NS[1].Version = GetAddOnMetadata(AddOnName, "Version")
+NS[1].Version = C_AddOns.GetAddOnMetadata(AddOnName, "Version")
 NS[1].userClassHexColor = "|c" .. select(4, GetClassColor(NS[1].userClass))
 NS[1].LoginMessage = format("%sTidyLFG v%s|r - /tl", NS[1].userClassHexColor, NS[1].Version)
 
