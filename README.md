@@ -1,23 +1,22 @@
 # TidyLFG
 
-TidyLFG is a simple addon which enhances the default LFG experience for Mythic+ activities, by filtering unwanted advertisements from the LFG tool.
+TidyLFG is an addon designed to enhance your Mythic+ experience by filtering out unwanted advertisements and allowing players to filter regional realms in the LFG tool.
 
 ## Addon Features
 
-TidyLFG only applies to M+ dungeon listings found under the Premade Group > Dungeons menu in the Group Finder.
+TidyLFG specifically applies to M+ dungeon listings found under the Premade Group > Dungeons menu in the Group Finder.
 
-* **Filter advertisements**
-    * Advertisers often exhibit predictable behaviour, which stands out from typical users who are genuinely trying to play the game. We can use these identifiers to help filter out spam from the listings. Unfortunately, Blizzard decided to protect certain areas of their game API which limits our ability to effectively address the problem. This filter works great, it just won't be able to catch everything.
-* **Filter Realms**
-    * Players can choose to filter one, or more regional realms. As example, this filter can help players avoid high latency and ping as a result of being phased to particular regional realms. This can happen when, as example, a player on a North American realm joins a party with a group leader from an Oceanic realm. The NA player will be phased to the Oceanic realm, causing poor network performance, and ultimately a poor game experience for you and your party members.
+* **Advertisement Filtering**:
+    * Advertisers often follow predictable patterns that differ from those of genuine players. TidyLFG uses these patterns to filter out spam from your listings. However, due to limitations imposed by Blizzard's protected API areas, this filter, while effective, may not catch everything.
+
+* **Realm Filtering**:
+    * You can choose to filter out specific regional realms. This feature helps avoid high latency and ping, which can occur when, for example, a North American player joins a group led by someone on an Oceanic realm. This realm phasing can lead to poor network performance and a subpar gaming experience for both you and your party.
     
 ## Options
 
-Type /tl or /tidy to open the Options. You may also access it via the in-game Options menu.
+To open the TidyLFG options, type /tl or /tidy in the chat, or access it through the in-game Options menu.
 
-Here you can choose to filter realms and show logs in your chat window.
-
-There is also a log button attached to the top of your Group Finder window, for quick access.
+In the Options menu, you can customize your realm filters and enable logs to be shown in your chat window. There's also a log button at the top of your Group Finder window for quick access.
 
 ![TidyLFG](https://user-images.githubusercontent.com/116991888/216848944-9650c1df-d929-4b71-bad2-8741709b78e4.jpg)
 ![TidyLFG](https://user-images.githubusercontent.com/116991888/215262286-f3444f5e-8ab7-42dc-abe5-9ab3569bbcae.jpg)
