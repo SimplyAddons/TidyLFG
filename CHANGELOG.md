@@ -1,3 +1,6 @@
+# 2.1.3
+- bump TOC for TWW (11.2.0)
+
 # 2.1.2
 - LoadAddOn has been deprecated by C_AddOns.LoadAddOn
 - GetAddOnMetadata has been deprecated by C_AddOns.GetAddOnMetadata
